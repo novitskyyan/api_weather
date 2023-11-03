@@ -11,7 +11,7 @@ header {
 }
 
 header, footer {
-    background: url(../img/pattern.jpeg);
+    background: url(pattern.jpeg);
             linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
     background-size: contain;
 }
@@ -65,4 +65,12 @@ background-color: var(--color2);
 
 .bg2 {
     background-color: var(--color2);
+}
+
+.mb {
+    background-color: #0dcaf0;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 5px;
+    padding: 10px;
 }

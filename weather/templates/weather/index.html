@@ -1,13 +1,19 @@
+{% load static %}
+{% block content %}
+
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Демо Bootstrap</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="shortcut icon" href="new/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="new/css/fontello.css">
-  <link rel="stylesheet" href="new/css/style.css">
+  <link rel="shortcut icon" href="{% static 'weather/icon.png' %}" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="{% static 'weather/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'weather/fontello.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}">
+  <script src="{% static 'weather/bootstrap.bundle.min.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 <body>
 <header>
@@ -27,8 +33,25 @@
 <section class="about">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <h2 class="text-center text-uppercase color1 mb-5">О сайте</h2>
+      <div class="col-md-5 mb">
+        {{ weather.0 }}
+      </div>
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-5 mb">
+        {{ weather.1 }}
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-5 mb">
+        {{ weather.2 }}
+      </div>
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-5 mb">
+        {{ weather.3 }}
       </div>
     </div>
   </div>
@@ -55,19 +78,25 @@
   </div>
 </div>
 
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../../static/weather/bootstrap.bundle.min.js"></script>
 </body>
 <script>
     function get_weather() {
         let city = document.getElementById('city_value').value;
         $.ajax({
-            url: '/get_weather/',
+            url: 'get_weather/',
             type: 'GET',
             dataType: 'json',
             data: {'city': city},
-
+            success: function (response) {
+                console.log(response);
+            },
+            error: function (error) {
+                console.error('Ошибка:', error);
+            }
         });
-        location.href = window.location.href;
+        // location.href = window.location.href;
     }
 </script>
 </html>
+{% endblock content %}
