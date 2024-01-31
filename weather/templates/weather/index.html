@@ -7,11 +7,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Демо Bootstrap</title>
-  <link rel="shortcut icon" href="{% static 'weather/icon.png' %}" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="{% static 'weather/bootstrap.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'weather/fontello.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}">
+  <link rel="shortcut icon" href="{% static 'weather/icon.png' %}"
+        type="image/x-icon">
+  <link rel="stylesheet" type="text/css"
+        href="{% static 'weather/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css"
+        href="{% static 'weather/fontello.css' %}">
+  <link rel="stylesheet" type="text/css"
+        href="{% static 'weather/style.css' %}">
+  <link rel="stylesheet" type="text/css"
+        href="{% static 'weather/style.css' %}">
   <script src="{% static 'weather/bootstrap.bundle.min.js' %}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
@@ -21,10 +26,12 @@
     <div class="row">
       <div class="col-12">
         <h1 class="text-center text-black">Получение прогноза погоды</h1>
-        <div class="itd_start" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="itd_start" data-bs-toggle="modal"
+             data-bs-target="#exampleModal">
           <div class="itd_triangle"></div>
         </div>
-        <a href="#footer" class="btn btn-itd btn-lg text-uppercase">Получить прогноз погоды</a>
+        <a href="#footer" class="btn btn-itd btn-lg text-uppercase">Получить
+          прогноз погоды</a>
 
       </div>
     </div>
@@ -34,24 +41,23 @@
   <div class="container">
     <div class="row">
       <div class="col-md-5 mb">
-        {{ weather.0 }}
+        <ul>
+          <li></li>
+        </ul>
       </div>
       <div class="col-md-2">
       </div>
       <div class="col-md-5 mb">
-        {{ weather.1 }}
       </div>
     </div>
     <br>
     <br>
     <div class="row">
       <div class="col-md-5 mb">
-        {{ weather.2 }}
       </div>
       <div class="col-md-2">
       </div>
       <div class="col-md-5 mb">
-        {{ weather.3 }}
       </div>
     </div>
   </div>
@@ -59,19 +65,25 @@
 <div></div>
 <footer id="footer">
 </footer>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Получение прогноза погоды любым удобным способом</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel">Получение прогноза
+          погоды любым удобным способом</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input id="city_value" type="text" class="form-control" aria-label="Default"
+        <input id="city_value" type="text" class="form-control"
+               aria-label="Default"
                aria-describedby="inputGroup-sizing-default">
         <br>
         <div class="d-flex justify-content-center">
-          <button texttype="button" class="btn btn-outline-success" onclick="get_weather()">Отправить</button>
+          <button texttype="button" class="btn btn-outline-success"
+                  onclick="get_weather()">Отправить
+          </button>
         </div>
       </div>
     </div>
@@ -95,7 +107,7 @@
                 console.error('Ошибка:', error);
             }
         });
-        // location.href = window.location.href;
+        location.href = window.location.href;
     }
 </script>
 </html>
